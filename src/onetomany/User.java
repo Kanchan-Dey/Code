@@ -27,7 +27,7 @@ public class User {
  {
 	 for(int i=0;i<count;i++)
 	 {
-		 System.out.println(posts[i].postdesc+ " "+ posts[i].postid);
+		 System.out.println(posts[i].postdesc+ " "+ posts[i].postid +" " + this.userName);
 	 }
  }
 }

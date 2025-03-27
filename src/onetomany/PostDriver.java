@@ -7,7 +7,10 @@ public static void main(String[] args) {
 	Scanner sc=new Scanner(System.in);
 	System.out.println("enter array size");
 	int size = sc.nextInt();
-	User user= new User(size,"honu");
+	sc.nextLine();
+	System.out.println("enter username");
+	String username=sc.nextLine();
+	User user= new User(size,username);
 	
     boolean flag =true;
     while(flag) {
