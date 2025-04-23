@@ -5,8 +5,8 @@ import java.util.regex.Pattern;
 
 public class RegexDemo {
 public static void main(String[] args) {
-	String str = "7439108021";
-	String regex ="[0-9{10}]";//^ matches any character other than this.
+	String str = "<h1>hello</h1>";
+	String regex ="[<[A-Za-z0-9]>][.][</[A-Za-z0-9]>]";//^ matches any character other than this.
 	Pattern pattern = Pattern.compile(regex);
 	Matcher matcher = pattern.matcher(str);//\\d would match any character
 	while(matcher.find()) {
