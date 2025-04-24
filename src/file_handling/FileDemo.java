@@ -6,7 +6,7 @@ import java.io.IOException;
 public class FileDemo {
 	public static void main(String[] args) throws IOException {
 		//String path = "C:\\Users\\User\\Desktop\\FileHandlingKolkata\\Test\\Demo\\demo.txt";
-		String renamepath = "C:\\Users\\User\\Desktop\\FileHandlingKolkata\\Test\\Gotham\\demo.txt";
+		String renamepath = "C:\\Users\\User\\Desktop\\FileHandlingKolkata\\Test\\Gotham\\pookie.txt";
 
 		File file = new File(renamepath);
 		//File rename = new File(renamepath);
@@ -19,6 +19,7 @@ public class FileDemo {
 		System.out.println(file.getName());
 		//file.delete();
 		file.createNewFile();
+		
 //		String[] arr = file.list();
 //		for(String s:arr)
 //		{
