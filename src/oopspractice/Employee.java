@@ -3,7 +3,7 @@ package oopspractice;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public abstract class Employee {
+public abstract class Employee implements Comparable<Employee> {
 	private String id;
 	private String name;
 	private double salary;
@@ -33,5 +33,8 @@ public abstract class Employee {
 	}
 
 	abstract void calculateBonus();
-
+   public int compareTo(Employee e)
+   {
+	   return this.getName().compareTo(e.getName());
+   }
 }
