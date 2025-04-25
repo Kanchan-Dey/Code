@@ -9,9 +9,9 @@ public abstract class Employee implements Comparable<Employee> {
 	private double salary;
 
 	Employee(String id, String name, double salary) throws InvalidEmployeeException {
-		Pattern pattern = Pattern.compile(id);
-		Matcher matcher = pattern.matcher(this.id);
-		if (matcher.find()) {
+		Pattern pattern = Pattern.compile("^EMP\\d{3}$");
+		Matcher matcher = pattern.matcher(id);
+		if (matcher.matches()) {
 			this.id = id;
 		} else {
 			throw new InvalidEmployeeException("Invalid employee id");
@@ -37,4 +37,6 @@ public abstract class Employee implements Comparable<Employee> {
    {
 	   return this.getName().compareTo(e.getName());
    }
+
+
 }

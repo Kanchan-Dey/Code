@@ -1,9 +1,10 @@
 package oopspractice;
 
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Optional;
 
 public class Department implements Iterator<Employee> {
 	private String name;
@@ -27,9 +28,13 @@ public class Department implements Iterator<Employee> {
 		}
 	}
 
-	public Employee getHighestPaidEmployee() {
-		Collections.sort(getEmployees(), new CompareBySalary());
-		return (Employee) getEmployees().getFirst();
+	// Remove the Iterator implementation and these methods:
+	// hasNext() and next()
+
+	// Change getHighestPaidEmployee() to:
+	public Optional<Employee> getHighestPaidEmployee() {
+	    return employees.stream()
+	            .max(Comparator.comparingDouble(Employee::getSalary));
 	}
 
 	@Override
@@ -52,4 +57,11 @@ public class Department implements Iterator<Employee> {
 		}
 		return null;
 	}
+
+	public String getName() {
+		// TODO Auto-generated method stub
+		return name;
+	}
+
+	
 }
